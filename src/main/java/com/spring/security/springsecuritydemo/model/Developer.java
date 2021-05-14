@@ -1,5 +1,9 @@
 package com.spring.security.springsecuritydemo.model;
 
+/*
+A class which indicates users of our site
+ */
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

@@ -1,5 +1,9 @@
 package com.spring.security.springsecuritydemo.rest;
 
+/*
+A class which contains method responsible for CRUD
+ */
+
 import com.spring.security.springsecuritydemo.model.Developer;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

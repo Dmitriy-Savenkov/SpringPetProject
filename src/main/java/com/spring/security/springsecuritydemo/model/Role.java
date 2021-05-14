@@ -1,5 +1,10 @@
 package com.spring.security.springsecuritydemo.model;
 
+/*
+Enum for indicating roles and rights of people in DB
+ */
+
+
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Set;

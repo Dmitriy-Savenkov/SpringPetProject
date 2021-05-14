@@ -1,5 +1,9 @@
 package com.spring.security.springsecuritydemo.model;
 
+/*
+Enum which indicates rights of our site's users
+ */
+
 public enum Permission {
     DEVELOPERS_READ("developers:read"),
     DEVELOPERS_WRITE("developers:write");

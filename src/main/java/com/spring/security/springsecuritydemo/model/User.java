@@ -1,7 +1,11 @@
 package com.spring.security.springsecuritydemo.model;
 
+/*
+Class of our users with fields for their indicating
+ */
+
+
 import lombok.Data;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 
