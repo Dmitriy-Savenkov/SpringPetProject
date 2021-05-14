@@ -1,10 +1,9 @@
 package com.spring.security.springsecuritydemo.config;
 
-import com.spring.security.springsecuritydemo.model.Permission;
 import com.spring.security.springsecuritydemo.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+import org.springframework.security.config. annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -16,6 +15,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)  // говорим, что у нас Security реализовано в методах
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -24,9 +24,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()   // механизм защиты от csrf угрозы
                 .authorizeRequests() // Решение к каким страницам сущность имеет доступ
                 .antMatchers("/").permitAll() // Указывает на какие паттерны URL кто имеет доступ
-                .antMatchers(HttpMethod.GET, "/api/**").hasAuthority(Permission.DEVELOPERS_READ.getPermission()) // на Get запрос все имеют право
-                .antMatchers(HttpMethod.POST, "/api/**").hasAuthority(Permission.DEVELOPERS_WRITE.getPermission()) // на Post запрос только у админа право
-                .antMatchers(HttpMethod.DELETE, "/api/**").hasAuthority(Permission.DEVELOPERS_WRITE.getPermission()) // на DELETE запрос только у админа право
                 .anyRequest() // Каждый запрос
                 .authenticated()    // должен быть аутентифицирован (проверен, друг или враг)
                 .and()
@@ -43,10 +40,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .authorities(Role.ADMIN.getAuthorities())
                         .build(),
                 User.builder()
-                .username("user")
-                .password(passwordEncoder().encode("user"))
-                .authorities(Role.USER.getAuthorities())
-                .build()
+                        .username("user")
+                        .password(passwordEncoder().encode("user"))
+                        .authorities(Role.USER.getAuthorities())
+                        .build()
         );
     }
 

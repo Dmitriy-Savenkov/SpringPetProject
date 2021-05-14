@@ -22,7 +22,7 @@ public enum Role {
 
     /*
     В классе UserDetails в Spring Security есть GrantedAuthority, что и является в Спринге правами.
-    SimpleGrantedAuthority посволяет определить Security кто и к чему имеет доступ
+    SimpleGrantedAuthority позволяет определить Security кто и к чему имеет доступ
     Нам требуется конвертировать наши permissions в эти SimpleGrantedAuthority
      */
     public Set<SimpleGrantedAuthority> getAuthorities() {
