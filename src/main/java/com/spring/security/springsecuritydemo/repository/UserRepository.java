@@ -4,7 +4,7 @@ package com.spring.security.springsecuritydemo.repository;
 An interface which communicates with DB.
  */
 
-import com.spring.security.springsecuritydemo.model.User;
+import com.spring.security.springsecuritydemo.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

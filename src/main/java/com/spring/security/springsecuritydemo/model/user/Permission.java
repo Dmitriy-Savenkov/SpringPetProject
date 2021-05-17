@@ -1,4 +1,4 @@
-package com.spring.security.springsecuritydemo.model;
+package com.spring.security.springsecuritydemo.model.user;
 
 /*
 Enum which indicates rights of our site's users

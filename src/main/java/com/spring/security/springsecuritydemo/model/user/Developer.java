@@ -1,4 +1,4 @@
-package com.spring.security.springsecuritydemo.model;
+package com.spring.security.springsecuritydemo.model.user;
 
 /*
 A class which indicates users of our site

@@ -5,8 +5,8 @@ A class for configuring our own Users, which are different
 from org.springframework.security.core.userdetails
  */
 
-import com.spring.security.springsecuritydemo.model.Status;
-import com.spring.security.springsecuritydemo.model.User;
+import com.spring.security.springsecuritydemo.model.user.Status;
+import com.spring.security.springsecuritydemo.model.user.User;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

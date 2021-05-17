@@ -6,7 +6,7 @@ It has one method named loadUserByUsername() which can be overridden to customiz
  */
 
 
-import com.spring.security.springsecuritydemo.model.User;
+import com.spring.security.springsecuritydemo.model.user.User;
 import com.spring.security.springsecuritydemo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

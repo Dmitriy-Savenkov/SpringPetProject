@@ -1,4 +1,4 @@
-package com.spring.security.springsecuritydemo.model;
+package com.spring.security.springsecuritydemo.model.user;
 
 /*
 Enum for indicating status of people in DB

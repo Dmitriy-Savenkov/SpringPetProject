@@ -1,0 +1,32 @@
+<!-- Организовываем страницу "Редактировать" -->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blogs/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Редактирование статьи</h1>
+
+    <!-- Создаем форму для редактирования статьи.
+    Мы удалили action, в котором указывается страница, на которой будет обрабатываться сама форма. Это означает, что изменения будут на странице, где был вызван шаблоне-->
+    <form method="post">
+        <!-- При нажатии на "Редактировать" у нас должен быть уже прописан старый текст. Для этого создаем цикл, перебирающий массив и  -->
+        <div th:each="element : ${post}">
+            <input type="text" th:value="${element.title}"  name="title" placeholder="Введите название статьи" class="form-control"><br>
+            <input type="text" th:value="${element.anons}" name="anons" placeholder="Введите анонс статьи" class="form-control"><br>
+            <textarea name="full_text"  placeholder="Введите текст статьи" class="form-control" th:text="${element.fullText}" /><br> <!-- у textarea нет аттрибута value, просто используем th:text -->
+            <button type="submit" class="btn btn-success">Обновить</button>
+            <!-- type="submit" - при нажатии на кнопку данные будут отправляться на сервер, а страница перезагружаться -->
+    </form>
+</div>
+
+</div>
+
+<footer th:insert="blogs/footer :: footer"></footer>
+</body>
+</html>

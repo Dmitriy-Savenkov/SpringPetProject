@@ -1,4 +1,4 @@
-package com.spring.security.springsecuritydemo.model;
+package com.spring.security.springsecuritydemo.model.user;
 
 /*
 Class of our users with fields for their indicating
