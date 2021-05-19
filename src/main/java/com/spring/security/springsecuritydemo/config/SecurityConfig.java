@@ -39,20 +39,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()   // механизм защиты от csrf угрозы
                 .authorizeRequests() // Решение к каким страницам сущность имеет доступ
-                .antMatchers("/").permitAll() // Указывает на какие паттерны URL кто имеет доступ
-                .anyRequest() // Каждый запрос
-                .authenticated()    // должен быть аутентифицирован (проверен, друг или враг)
+                .antMatchers("/", "/registration", "/about", "/unsuccessfulauth").permitAll() // Указывает на какие паттерны URL кто имеет доступ
+                .anyRequest() // Каждый следующий запрос
+                .authenticated()    // должен быть аутентифицирован
                 .and()
                 .formLogin()  // мы хотим использовать кастомный метод авторизации
-                .loginPage("/auth/login").permitAll() // ссылка на кастомный метод авторизации
-                .defaultSuccessUrl("/auth/success") // ссылка на успешную авторизацию
+                .loginPage("/login").permitAll() // ссылка на кастомный метод авторизации
+                .defaultSuccessUrl("/") // ссылка на успешную авторизацию
                 .and()
                 .logout()   // Просим учесть в конфиге, что сы хотим натсроить LogOut
-                .logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout", "POST"))   // LogOut обрабатываем AntPathRequestMatcher с методом Пост
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))   // LogOut обрабатываем AntPathRequestMatcher с методом Пост
                 .invalidateHttpSession(true)     // Инвалидируем (обновление элементов) сессию
                 .clearAuthentication(true)      // Очищаем аутентификацию (сущность, которая содержит инфу о юзере)
                 .deleteCookies("JSESSIONID")        // Удаляем кукки
-                .logoutSuccessUrl("/auth/login");       // Перенаправляем на успешную стр.
+                .logoutSuccessUrl("/");       // Перенаправляем на успешную стр.
     }
 
     @Bean

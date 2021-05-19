@@ -6,7 +6,7 @@ Enum which indicates rights of our site's users
 
 public enum Permission {
     DEVELOPERS_READ("developers:read"),
-    DEVELOPERS_WRITE("developers:write");
+    DEVELOPERS_CHANGE("developers:change");
 
     private final String permission;
 

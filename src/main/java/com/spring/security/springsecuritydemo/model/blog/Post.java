@@ -4,7 +4,7 @@ package com.spring.security.springsecuritydemo.model.blog;
 Post - посты, статьи и тд. Наш блог
  */
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -16,8 +16,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO) // Автоматический инкремент переменной при создании записи в БД
     private Long id;
 
-    private String title, anons, fullText;
-    private int views;
+    @Column
+    private String title;
+    @Column
+    private String anons;
+    @Column
+    private String fullText;
 
     public Post() {
     }

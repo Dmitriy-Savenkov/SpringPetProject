@@ -10,12 +10,10 @@
 <header th:insert="blogs/header :: header"></header>
 
 <div class="container mt-5">
-    <!-- Чтобы вывести все записи, переданные из BlogController, нужен цикл, так как значения - массив -->
     <div th:each="element : ${post}" class="alert alert-info mt-2"> <!-- мы обращаемся к  www.thymeleaf.org, к его методу each, который перебирает инфу.
     наша переменная element из переданного массива posts-->
         <h1 th:text="${element.title}"/> <!-- у нас есть private поле title и мы к нему обращаемся от element -->
         <p th:text="${element.fullText}"/> <!-- у нас есть private поле full_text и мы к нему обращаемся от element -->
-        <p><b>Просмотры:</b> <span th:text="${element.views}"/></p> <!-- у нас есть private поле views и мы к нему обращаемся от element -->
         <a th:href="'/blog/' + ${element.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
 
         <!-- кнопка Удалить отправляет Post данные на обработку -->
