@@ -1,8 +1,11 @@
 package com.spring.security.springsecuritydemo.model.user;
 
-/*
-Enum which indicates rights of our site's users
+/**
+ * Enum which indicates rights of our site's users
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
+
 
 public enum Permission {
     DEVELOPERS_READ("developers:read"),

@@ -1,9 +1,10 @@
 package com.spring.security.springsecuritydemo.model.user;
 
-/*
-Enum for indicating roles and rights of people in DB
+/**
+ * Enum for indicating roles and rights of people in DB
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
-
 
 import com.spring.security.springsecuritydemo.model.user.Permission;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

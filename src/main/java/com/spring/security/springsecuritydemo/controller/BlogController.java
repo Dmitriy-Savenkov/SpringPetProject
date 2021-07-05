@@ -1,7 +1,9 @@
 package com.spring.security.springsecuritydemo.controller;
 
-/*
-A controller for blog page
+/**
+ * A controller for blog pages
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
 
 import com.spring.security.springsecuritydemo.model.blog.Post;

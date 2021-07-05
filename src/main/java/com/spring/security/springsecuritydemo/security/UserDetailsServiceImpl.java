@@ -1,10 +1,11 @@
 package com.spring.security.springsecuritydemo.security;
 
-/*
-The UserDetailsService interface is used to retrieve user-related data.
-It has one method named loadUserByUsername() which can be overridden to customize the process of finding the user.
+/**
+ * The UserDetailsService interface is used to retrieve user-related data.
+ * It has one method named loadUserByUsername() which can be overridden to customize the process of finding the user.
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
-
 
 import com.spring.security.springsecuritydemo.model.user.User;
 import com.spring.security.springsecuritydemo.repository.UserRepository;

@@ -1,7 +1,9 @@
 package com.spring.security.springsecuritydemo.model.blog;
 
-/*
-Post - посты, статьи и тд. Наш блог
+/**
+ * A class of our entity - Post
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
 
 import lombok.*;
@@ -10,6 +12,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name = "posts")
 public class Post {
     @Id
@@ -23,8 +26,6 @@ public class Post {
     @Column
     private String fullText;
 
-    public Post() {
-    }
 
     public Post(String title, String anons, String fullText) {
         this.title = title;

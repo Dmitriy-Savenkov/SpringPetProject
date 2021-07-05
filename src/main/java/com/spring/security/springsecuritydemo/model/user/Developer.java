@@ -1,8 +1,11 @@
 package com.spring.security.springsecuritydemo.model.user;
 
-/*
-A class which indicates users of our site
+/**
+ * A class which indicates users of our site
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

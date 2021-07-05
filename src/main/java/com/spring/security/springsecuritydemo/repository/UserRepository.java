@@ -1,8 +1,11 @@
 package com.spring.security.springsecuritydemo.repository;
 
-/*
-An interface which communicates with DB.
+/**
+ * An interface of repository of our entity - User
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
+
 
 import com.spring.security.springsecuritydemo.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;

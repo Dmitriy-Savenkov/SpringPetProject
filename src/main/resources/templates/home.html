@@ -1,180 +1,87 @@
 <!-- Организовываем главную страницу -->
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>HomePage</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="blogs/head :: head"></head>
+
 <body>
 
 <header th:insert="blogs/header :: header"></header>
 
 <main>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                </div>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Pet Project</h1>
+                <p class="lead text-muted">
+                    This is a CRUD web-application for working with posts.
+                    There is an ability to look through some interesting topics, fill or correct them and tell your
+                    friends about what you have read :)</p>
+                <p>
+                    <a href="/blog" class="btn btn-primary my-2">Read topics</a>
+                    <a href="/blog/add" class="btn btn-secondary my-2">Add a topic</a>
+                </p>
             </div>
         </div>
-        <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Pro</h4>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"></rect>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li>20 users included</li>
-                        <li>10 GB of storage</li>
-                        <li>Priority email support</li>
-                        <li>Help center access</li>
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                <div class="card-header py-3 text-white bg-primary border-primary">
-                    <h4 class="my-0 fw-normal">Enterprise</h4>
-                </div>
-                <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li>30 users included</li>
-                        <li>15 GB of storage</li>
-                        <li>Phone and email support</li>
-                        <li>Help center access</li>
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"></rect>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <h2 class="display-6 text-center mb-4">Compare plans</h2>
-
-    <div class="table-responsive">
-        <table class="table text-center">
-            <thead>
-            <tr>
-                <th style="width: 34%;"></th>
-                <th style="width: 22%;">Free</th>
-                <th style="width: 22%;">Pro</th>
-                <th style="width: 22%;">Enterprise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row" class="text-start">Public</th>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-start">Private</th>
-                <td></td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-            </tr>
-            </tbody>
-
-            <tbody>
-            <tr>
-                <th scope="row" class="text-start">Permissions</th>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-start">Sharing</th>
-                <td></td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-start">Unlimited members</th>
-                <td></td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="text-start">Extra security</th>
-                <td></td>
-                <td></td>
-                <td>
-                    <svg class="bi" width="24" height="24">
-                        <use xlink:href="#check"></use>
-                    </svg>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
 </main>
 
 <footer th:insert="blogs/footer :: footer"></footer>
+<script th:insert="blogs/script :: script"></script>
 
 </body>
+
+<scroll-to-top-button-container
+        th:insert="blogs/scrollContainer.html :: scroll-to-top-button-container"></scroll-to-top-button-container>
 </html>

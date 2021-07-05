@@ -1,8 +1,10 @@
 package com.spring.security.springsecuritydemo.security;
 
-/*
-A class for configuring our own Users, which are different
-from org.springframework.security.core.userdetails
+/**
+ * A class for configuring our own Users, which are different
+ * from org.springframework.security.core.userdetails
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
 
 import com.spring.security.springsecuritydemo.model.user.Status;

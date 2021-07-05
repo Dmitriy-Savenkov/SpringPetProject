@@ -6,6 +6,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+/**
+ * A configuration class for creation of session factory for working with DB
+ * @autor Dmitriy Savenkov
+ * @version 1.0
+ */
+
+
 public class HibernateSessionFactoryUtil {
     private static SessionFactory sessionFactory;
 

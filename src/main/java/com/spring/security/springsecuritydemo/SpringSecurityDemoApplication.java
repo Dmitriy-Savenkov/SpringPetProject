@@ -1,7 +1,9 @@
 package com.spring.security.springsecuritydemo;
 
-/*
-A starting class
+/**
+ * A main class
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
 
 import org.springframework.boot.SpringApplication;

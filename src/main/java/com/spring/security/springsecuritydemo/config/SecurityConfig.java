@@ -1,10 +1,12 @@
 package com.spring.security.springsecuritydemo.config;
 
-/*
-Class for indicating settings:
-_Authentication
-_Login
-_Logout
+/**
+ * A class for indicating settings:
+ * _Authentication
+ * _Login
+ * _Logout
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
 
 import org.springframework.beans.factory.annotation.Autowired;

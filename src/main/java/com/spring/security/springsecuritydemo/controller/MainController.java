@@ -4,6 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * A controller for main pages
+ * @autor Dmitriy Savenkov
+ * @version 1.0
+ */
+
+
 @Controller
 public class MainController {
 

@@ -8,14 +8,15 @@
 		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.spring.security</groupId>
 	<artifactId>springsecuritydemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringSecurityDemo</name>
-	<description>Demo project for Spring Security</description>
+	<description>Pet project for Spring</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>15</java.version>
 	</properties>
 
 	<dependencies>

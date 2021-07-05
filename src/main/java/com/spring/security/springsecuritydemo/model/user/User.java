@@ -1,16 +1,19 @@
 package com.spring.security.springsecuritydemo.model.user;
 
-/*
-Class of our users with fields for their indicating
+/**
+ * A class of our entity - Post
+ * @autor Dmitriy Savenkov
+ * @version 1.0
  */
 
-
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
