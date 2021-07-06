@@ -6,7 +6,6 @@ package com.spring.security.springsecuritydemo.model.user;
  * @version 1.0
  */
 
-import com.spring.security.springsecuritydemo.model.user.Permission;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Set;

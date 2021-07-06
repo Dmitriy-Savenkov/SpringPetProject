@@ -1,12 +1,11 @@
 <!-- Организовываем страницу "Блог" -->
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Блог сайта</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+
+<head th:insert="blogs/head :: head"></head>
+
 <body>
+
 <header th:insert="blogs/header :: header"></header>
 
 <div class="container mt-5">
@@ -23,5 +22,6 @@
 </div>
 
 <footer th:insert="blogs/footer :: footer"></footer>
+
 </body>
 </html>

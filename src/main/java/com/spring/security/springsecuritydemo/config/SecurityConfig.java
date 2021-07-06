@@ -5,6 +5,7 @@ package com.spring.security.springsecuritydemo.config;
  * _Authentication
  * _Login
  * _Logout
+ *
  * @autor Dmitriy Savenkov
  * @version 1.0
  */
@@ -40,21 +41,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()   // механизм защиты от csrf угрозы
-                .authorizeRequests() // Решение к каким страницам сущность имеет доступ
-                .antMatchers("/", "/registration", "/about", "/unsuccessfulauth").permitAll() // Указывает на какие паттерны URL кто имеет доступ
-                .anyRequest() // Каждый следующий запрос
-                .authenticated()    // должен быть аутентифицирован
+                    .authorizeRequests() // Решение к каким страницам сущность имеет доступ
+                    .antMatchers("/", "/registration", "/blog", "/about", "/unsuccessfulauth").permitAll() // Указывает на какие паттерны URL кто имеет доступ
+                    .anyRequest() // Каждый следующий запрос
+                    .authenticated()    // должен быть аутентифицирован
                 .and()
-                .formLogin()  // мы хотим использовать кастомный метод авторизации
-                .loginPage("/login").permitAll() // ссылка на кастомный метод авторизации
-                .defaultSuccessUrl("/") // ссылка на успешную авторизацию
+                    .formLogin()  // мы хотим использовать кастомный метод авторизации
+                    .loginPage("/login")
+                    .permitAll() // ссылка на кастомный метод авторизации
+                    .defaultSuccessUrl("/") // ссылка на успешную авторизацию
                 .and()
-                .logout()   // Просим учесть в конфиге, что сы хотим натсроить LogOut
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))   // LogOut обрабатываем AntPathRequestMatcher с методом Пост
-                .invalidateHttpSession(true)     // Инвалидируем (обновление элементов) сессию
-                .clearAuthentication(true)      // Очищаем аутентификацию (сущность, которая содержит инфу о юзере)
-                .deleteCookies("JSESSIONID")        // Удаляем кукки
-                .logoutSuccessUrl("/");       // Перенаправляем на успешную стр.
+                    .logout()  // Просим учесть в конфиге, что мы хотим настроить LogOut
+                    .permitAll()
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))   // LogOut обрабатываем AntPathRequestMatcher с методом Пост
+                    .invalidateHttpSession(true)     // Инвалидируем (обновление элементов) сессию
+                    .clearAuthentication(true)      // Очищаем аутентификацию (сущность, которая содержит инфу о юзере)
+                    .deleteCookies("JSESSIONID")        // Удаляем кукки
+                    .logoutSuccessUrl("/");       // Перенаправляем на успешную стр.
     }
 
     @Bean

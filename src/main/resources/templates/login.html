@@ -1,37 +1,39 @@
 <!--HTML code for LogIn page-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-</head>
-<body>
 
+<head th:insert="blogs/head :: head"></head>
+
+<body>
+<header th:insert="blogs/header :: header"></header>
 
 <div class="container">
-    <form class="form-signin" method="post" action="/login">
-        <h2 class="form-signin-heading">Login</h2>
-        <p>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
-                   autofocus>
-        </p>
-        <p>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-        </p>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-    <br>
-    <br>
-    <a href="/registration">If you aren't registered</a>
-    <br>
-    <br>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Please, Log in</h1>
+
+                <form method="get" action="/login">
+                    <div class="form-floating m-3">
+                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="form-floating m-3">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </form>
+                <form class="m-3">
+                    <a href="/registration">If you aren't registered</a>
+                </form>
+
+            </div>
+        </div>
+    </section>
 </div>
 
+<footer th:insert="blogs/footer :: footer"></footer>
 
 </body>
 </html>

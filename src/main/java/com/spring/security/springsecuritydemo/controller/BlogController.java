@@ -26,8 +26,12 @@ import java.util.Optional;
 
 @Controller
 public class BlogController {
-    @Autowired
-    private PostRepository postRepository;
+
+    private final PostRepository postRepository;
+
+    public BlogController(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @GetMapping("/blog")
     public String blogMain(Model model) {
@@ -59,7 +63,7 @@ public class BlogController {
             return "redirect:/blog";
         }
         Optional<Post> post = postRepository.findById(id);
-        List<Post> list = new ArrayList<>(); // т.к. с Optional трудно работать, приводим его к ArrayList
+        List<Post> list = new ArrayList<>();
         post.ifPresent(list::add);
         model.addAttribute("post", list);
         return "blog-details";
@@ -73,7 +77,7 @@ public class BlogController {
             return "redirect:/blog";
         }
         Optional<Post> post = postRepository.findById(id);
-        List<Post> list = new ArrayList<>(); // т.к. с Optional трудно работать, приводим его к ArrayList
+        List<Post> list = new ArrayList<>();
         post.ifPresent(list::add);
         model.addAttribute("post", list);
         return "blog-edit";
