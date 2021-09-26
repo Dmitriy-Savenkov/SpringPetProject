@@ -1,7 +1,7 @@
 package com.spring.security.springsecuritydemo.repository;
 
-/*
-An interface which communicates with DB.
+/**
+ * UserRepository - our DB connector for User entity
  */
 
 import com.spring.security.springsecuritydemo.model.user.User;

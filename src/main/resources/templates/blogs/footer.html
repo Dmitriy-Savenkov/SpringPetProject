@@ -1,40 +1,23 @@
-<!-- Делаем шаблон нижней части сайта, чтобы не писать 20 раз -->
-<div th:fragment="footer">
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+<!-- Делаем шаблон нижней части сайта -->
+<div th:fragment="footer" class="fixed-bottom">
+    <footer class="mt-auto text-white-50" style="text-align: center">
         <div class="row">
-            <div class="col-12 col-md">
-                <img class="mb-2" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
-                <small class="d-block mb-3 text-muted">© 2017–2021</small>
+            <div class="col-1 col-md">
+                <img class="mb-2" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0a/8cd7f1b14344618b75142593bc7af8/JavaCupLogo800x800.png?auto=format%2Ccompress&dpr=1" alt="" width="24" height="19">
+                <small class="d-block mb-3 text-muted">© 2021–2021</small>
             </div>
-            <div class="col-6 col-md">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a>
-                    </li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource </a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name </a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource </a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource </a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
+            <div class="col-2 col-md bottom-nav">
                 <h5>About</h5>
-                <ul class="list-unstyled text-small">
+                <ul class="list-unstyled text-small" >
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
                     <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
                 </ul>
+            </div>
+            <div class="col-1 col-md">
+                <img class="mb-2" src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU" alt="" width="24" height="19">
+                <a class="ld-block mb-3 text-muted" href="https://github.com/Dmitriy-Savenkov/SpringPetProject">GitHub</a>
             </div>
         </div>
     </footer>
