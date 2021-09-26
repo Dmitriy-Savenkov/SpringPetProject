@@ -1,0 +1,65 @@
+<!-- Организовываем страницу "Note" -->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="site/head :: head"></head>
+
+<body>
+
+<header th:insert="site/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Список заметок</h1>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <form method="get" action="/note" class="form-inline">
+                <input type="date" name="dateFilter" placeholder="Поиск по дате" th:value="${dateFilter}">
+                <button type="submit" class="btn btn-primary btn-sm">Найти</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <form method="get" action="/note" class="form-inline">
+                <input type="text" name="hashTagFilter" placeholder="Поиск по тегу" th:value="${hashTagFilter}">
+                <button type="submit" class="btn btn-primary btn-sm">Найти</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <form method="get" action="/note" class="form-inline">
+                <input type="text" name="searchingText" placeholder="Поиск по тексту" th:value="${searchingText}">
+                <button type="submit" class="btn btn-primary btn-sm">Найти</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card-group">
+        <div th:each="element : ${notes}" class="card m-3">
+            <div class="card-body m-2">
+                <h5 class="card-title" th:text="${element.title}"/>
+                <h6 class="card-subtitle mb-2 text-muted" th:text="${element.dateOfCreation}"/>
+                <p class="card-text" th:text="${element.noteText}"/>
+
+                <div th:each="hashTag : ${element.tags}" class="card-subtitle mb-2 text-muted">
+                    <h9>Tag: <span th:text="${hashTag.tag}"/></h9>
+                </div>
+
+                <a th:href="'/note/' + ${element.id} + '/edit'" class="card-link">Редактировать</a>
+
+                <form th:action="'/note/' + ${element.id} + '/remove'" method="post">
+                    <button type="submit" class="btn btn-primary btn-sm mt-2">Удалить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:insert="site/footer :: footer"></footer>
+<script th:insert="site/JSScript :: script"></script>
+</body>
+</html>

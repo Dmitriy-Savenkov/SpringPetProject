@@ -1,31 +1,27 @@
 package com.spring.security.springsecuritydemo.model.blog;
 
 /**
- * A class of our entity - Post
- * @autor Dmitriy Savenkov
- * @version 1.0
+ * Class Post - our entity
  */
 
 import lombok.*;
-
 import javax.persistence.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @Table(name = "posts")
+@NoArgsConstructor
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) // Автоматический инкремент переменной при создании записи в БД
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-
-    @Column
+    @Column(name = "title")
     private String title;
-    @Column
+    @Column(name = "anons")
     private String anons;
-    @Column
+    @Column(name = "full_text")
     private String fullText;
-
 
     public Post(String title, String anons, String fullText) {
         this.title = title;

@@ -1,11 +1,24 @@
-<!-- Делаем шаблон нижней части сайта, чтобы не писать 20 раз -->
-<div th:fragment="footer">
-    <footer class="text-muted py-5">
-        <div class="container">
-            <p class="float-end mb-1">
-                <a href="#">Back to top</a>
-            </p>
-            <p class="mb-0">New to Blog Project? <a href="/about">Read about us</a>.</p>
+<!-- Делаем шаблон нижней части сайта -->
+<div th:fragment="footer" class="fixed-bottom">
+    <footer class="mt-auto text-white-50" style="text-align: center">
+        <div class="row">
+            <div class="col-1 col-md">
+                <img class="mb-2" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0a/8cd7f1b14344618b75142593bc7af8/JavaCupLogo800x800.png?auto=format%2Ccompress&dpr=1" alt="" width="24" height="19">
+                <small class="d-block mb-3 text-muted">© 2021–2021</small>
+            </div>
+            <div class="col-2 col-md bottom-nav">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small" >
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+                </ul>
+            </div>
+            <div class="col-1 col-md">
+                <img class="mb-2" src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU" alt="" width="24" height="19">
+                <a class="ld-block mb-3 text-muted" href="https://github.com/Dmitriy-Savenkov/SpringPetProject">GitHub</a>
+            </div>
         </div>
     </footer>
 </div>

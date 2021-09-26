@@ -16,7 +16,7 @@
     В action указывается страница, на которой будет обрабатываться сама форма.
     В method указывается метод передачи данных
     method=post - скрытная передача на сервер method=get - все данные передаются в URL адресе-->
-    <form action="/blog/add" method="post">
+    <form action="/blog/add" method="post" class="mt-3">
         <input type="text" name="title" placeholder="Введите название статьи" class="form-control"><br>
         <input type="text" name="anons" placeholder="Введите анонс статьи" class="form-control"><br>
         <textarea name="fullText" placeholder="Введите текст статьи" class="form-control"></textarea><br>
@@ -27,9 +27,6 @@
 </div>
 
 <footer th:insert="blogs/footer :: footer"></footer>
-<form th:action="@{/logout}" method="post" class="m-3">
-    <input type="submit" value="Log Out"/>
-</form>
-
+<script th:insert="blogs/JSScript :: script"></script>
 </body>
 </html>

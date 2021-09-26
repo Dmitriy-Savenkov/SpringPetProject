@@ -1,32 +1,36 @@
 package com.spring.security.springsecuritydemo.model.user;
 
 /**
- * A class of our entity - Post
- * @autor Dmitriy Savenkov
- * @version 1.0
+ * Class User - our entity
  */
 
+
+import com.spring.security.springsecuritydemo.model.user.enums.Role;
+import com.spring.security.springsecuritydemo.model.user.enums.Status;
+import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
 @Entity
+@Data
 @NoArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-
     @Column(name = "email")
+    @NotNull
     private String email;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "password")
+    @NotNull
     private String password;
     @Enumerated(value = EnumType.STRING)
     @Column(name = "role")
@@ -36,3 +40,4 @@ public class User {
     private Status status;
 
 }
+

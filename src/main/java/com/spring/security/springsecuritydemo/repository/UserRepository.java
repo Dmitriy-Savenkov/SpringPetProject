@@ -1,11 +1,8 @@
 package com.spring.security.springsecuritydemo.repository;
 
 /**
- * An interface of repository of our entity - User
- * @autor Dmitriy Savenkov
- * @version 1.0
+ * UserRepository - our DB connector for User entity
  */
-
 
 import com.spring.security.springsecuritydemo.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
